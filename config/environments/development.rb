@@ -70,5 +70,6 @@ Rails.application.configure do
   rescue LoadError => e
     raise e unless ENV['RAILS_ENV'] == "production"
   end
+  config.assets.compile = false
 
 end
