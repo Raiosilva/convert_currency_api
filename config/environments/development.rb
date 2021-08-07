@@ -65,4 +65,10 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   config.force_ssl = false
 
+  begin
+    require 'minitest/autorun'
+  rescue LoadError => e
+    raise e unless ENV['RAILS_ENV'] == "production"
+  end
+
 end
