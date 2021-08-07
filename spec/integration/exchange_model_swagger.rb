@@ -1,13 +1,16 @@
 require 'swagger_helper'
+require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe 'API::V1::Exchanges', type: :request do
+RSpec.describe 'Exchanges', type: :request do
 	describe 'Exchanges API Get' do
-	  path '/convert' do
+	  path '/api/v1/convert' do
 		get 'Retrieves all Exchanges' do
 		  consumes 'application/json'
 		  produces 'application/json'
 		  tags 'exchanges'
-		  parameter name: :source_currency, in: :query, type: :string, description: '', required: true
+		#   parameter name: :source_currency, in: :query, type: :string, description: '', required: true
+		  parameter name: :source_currency, :in => :path, :type => :string, required: true
 		  parameter name: :target_currency, in: :query, type: :string, description: '', required: true
 		  parameter name: :amount, in: :query, type: :number, description: '', required: true
 		  response '200', :success do
@@ -15,10 +18,6 @@ RSpec.describe 'API::V1::Exchanges', type: :request do
 				properties: {
 					value: { type: :number }
 				} 
-				run_test!
-			end
-	
-			response '404', 'Exchanges not found' do
 				run_test!
 			end
 		end
