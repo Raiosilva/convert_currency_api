@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API de conversão de moedas internacionais utilizando de serviço externo.
 
-Things you may want to cover:
+Serviço utilizado opara consulta externa:
+* https://currencydatafeed.com/
 
-* Ruby version
+Após fazer o clone da api rode:
 
-* System dependencies
+* rails db:create db:migrate
+* rails s
 
-* Configuration
+irá rodar na porta: 
+* http://localhost:3000/api/v1/convert
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Para acessar o swagger:
+* http://localhost:3000/api-docs/index.html
