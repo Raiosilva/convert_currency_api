@@ -1,0 +1,48 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+  description: This is the first version of my API
+paths:
+  "/convert":
+    get:
+      summary: Retrieves all Exchanges
+      tags:
+      - exchanges
+      parameters:
+      - name: source_currency
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: string
+      - name: target_currency
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: string
+      - name: amount
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: number
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: number
+        '404':
+          description: Exchanges not found
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000/api/v1/
