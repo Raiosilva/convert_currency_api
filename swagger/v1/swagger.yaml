@@ -42,7 +42,7 @@ paths:
         '404':
           description: Exchanges not found
 servers:
-- url: https://convert-currency-api.herokuapp.com/
+- url: https://{defaultHost}
   variables:
     defaultHost:
       default: https://convert-currency-api.herokuapp.com/api/v1/
