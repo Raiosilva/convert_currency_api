@@ -45,4 +45,4 @@ servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
-      default: https://convert-currency-api.herokuapp.com/api/v1/
+      default: convert-currency-api.herokuapp.com/api/v1/
