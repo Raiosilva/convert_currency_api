@@ -28,12 +28,13 @@ gem 'swagger-docs'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
-group :development, :test do
+group :development, :test, :production do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'pg', '~> 1.2.3'
   gem 'spring'
 end
 
@@ -43,9 +44,9 @@ end
 #   gem 'spring'
 # end
 
-group :production do
-  gem 'pg', '~> 1.2.3'
-end
+# group :production do
+#   gem 'pg', '~> 1.2.3'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
